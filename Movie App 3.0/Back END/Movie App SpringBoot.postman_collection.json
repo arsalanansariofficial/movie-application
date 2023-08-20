@@ -1,0 +1,1791 @@
+{
+	"info": {
+		"_postman_id": "691385e3-e231-445d-bcd5-5aa08f704249",
+		"name": "Movie App SpringBoot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Default",
+			"item": [
+				{
+					"name": "City",
+					"item": [
+						{
+							"name": "Get City",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"city\": \"{{cityId}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/city/find",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"city",
+										"find"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Cities",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/city/find-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"city",
+										"find-all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create City",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.response.code === 201) {\r",
+											"    pm.environment.set('cityId', pm.response.json().cityId);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cityName\": \"delhi\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/city/save",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"city",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Cities",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"cityId\": \"delhi\",\r\n        \"cityName\": \"delhi\"\r\n    },\r\n    {\r\n        \"cityId\": \"mumbai\",\r\n        \"cityName\": \"mumbai\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/city/save-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"city",
+										"save-all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete City",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cityId\": \"{{cityId}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/city/delete",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"city",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Cities",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/city/delete-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"city",
+										"delete-all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Movie",
+					"item": [
+						{
+							"name": "Get Movie",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movieId\": \"{{movieId}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie/find",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie",
+										"find"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Movies",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/movie/find-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie",
+										"find-all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Movie",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.response.code === 201) {\r",
+											"    pm.environment.set('movieId', pm.response.json().movieId);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Movie 1\",\r\n    \"genre\": \"action\",\r\n    \"artists\": \"Movie Artist\",\r\n    \"releaseDate\": \"2021-01-01T10:00\",\r\n    \"duration\": 120,\r\n    \"criticsRating\": 3,\r\n    \"storyline\": \"Movie storyline\",\r\n    \"artistURL\": \"artist-url\",\r\n    \"wikipediaURL\": \"wikipedia_url\",\r\n    \"trailerURL\": \"trailer_url\",\r\n    \"posterURL\": \"posterURL\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie/save",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Movies",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"movieId\": \"movie-1\",\r\n        \"name\": \"Movie 1\",\r\n        \"genre\": \"action\",\r\n        \"artists\": \"Movie Artist\",\r\n        \"releaseDate\": \"2021-01-01T10:00\",\r\n        \"duration\": 120,\r\n        \"criticsRating\": 3,\r\n        \"storyline\": \"Movie storyline\",\r\n        \"artistURL\": \"artist-url\",\r\n        \"wikipediaURL\": \"wikipedia_url\",\r\n        \"trailerURL\": \"trailer_url\",\r\n        \"posterURL\": \"posterURL\"\r\n    },\r\n    {\r\n        \"movieId\": \"movie-2\",\r\n        \"name\": \"Movie 2\",\r\n        \"genre\": \"action\",\r\n        \"artists\": \"Movie Artist\",\r\n        \"releaseDate\": \"2021-01-10T10:00\",\r\n        \"duration\": 120,\r\n        \"criticsRating\": 3,\r\n        \"storyline\": \"Movie storyline\",\r\n        \"artistURL\": \"artist-url\",\r\n        \"wikipediaURL\": \"wikipedia_url\",\r\n        \"trailerURL\": \"trailer_url\",\r\n        \"posterURL\": \"posterURL\"\r\n    },\r\n    {\r\n        \"movieId\": \"movie-3\",\r\n        \"name\": \"Movie 3\",\r\n        \"genre\": \"action\",\r\n        \"artists\": \"Movie Artist\",\r\n        \"releaseDate\": \"2021-01-20T10:00\",\r\n        \"duration\": 120,\r\n        \"criticsRating\": 3,\r\n        \"storyline\": \"Movie storyline\",\r\n        \"artistURL\": \"artist-url\",\r\n        \"wikipediaURL\": \"wikipedia_url\",\r\n        \"trailerURL\": \"trailer_url\",\r\n        \"posterURL\": \"posterURL\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie/save-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie",
+										"save-all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Movie",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movieId\": \"{{movieId}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie/delete",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Movies",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/movie/delete-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie",
+										"delete-all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Theatre",
+					"item": [
+						{
+							"name": "Get Theatre",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"theatreId\": \"{{theatreId}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/theatre/find",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theatre",
+										"find"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Theatres",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/theatre/find-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theatre",
+										"find-all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Theatre",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.response.code === 201) {\r",
+											"    pm.environment.set('theatreId', pm.response.json().theatreId);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"theatreName\": \"waves\",\r\n    \"city\": {\r\n        \"cityId\": \"{{cityId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/theatre/save",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theatre",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Theatres",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"theatreId\": \"pvr-{{cityId}}\",\r\n        \"theatreName\": \"pvr-{{cityId}}\",\r\n        \"city\": {\r\n            \"cityId\": \"{{cityId}}\"\r\n        }\r\n    },\r\n    {\r\n        \"theatreId\": \"waves-{{cityId}}\",\r\n        \"theatreName\": \"waves-{{cityId}}\",\r\n        \"city\": {\r\n            \"cityId\": \"{{cityId}}\"\r\n        }\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/theatre/save-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theatre",
+										"save-all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Theatre",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"theatreId\": \"{{theatreId}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/theatre/delete",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theatre",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Theatres",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/theatre/delete-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"theatre",
+										"delete-all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Movie -> Theatre",
+					"item": [
+						{
+							"name": "Get Movie Theatre",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movieTheatreId\": \"{{movieTheatreId}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie-theatre/find",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie-theatre",
+										"find"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Movie Theatres",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/movie-theatre/find-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie-theatre",
+										"find-all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Movie Theatre",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.response.code === 201) {\r",
+											"    pm.environment.set('movieTheatreId', pm.response.json().movieTheatreId);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movie\": {\r\n        \"movieId\": \"{{movieId}}\"\r\n    },\r\n    \"theatre\": {\r\n        \"theatreId\": \"{{theatreId}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie-theatre/save",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie-theatre",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Movie Theatres",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"movieTheatreId\": \"movie-1: {{theatreId}}\",\r\n        \"movie\": {\r\n            \"movieId\": \"movie-1\"\r\n        },\r\n        \"theatre\": {\r\n            \"theatreId\": \"{{theatreId}}\"\r\n        }\r\n    },\r\n    {\r\n        \"movieTheatreId\": \"movie-2: {{theatreId}}\",\r\n        \"movie\": {\r\n            \"movieId\": \"movie-2\"\r\n        },\r\n        \"theatre\": {\r\n            \"theatreId\": \"{{theatreId}}\"\r\n        }\r\n    },\r\n    {\r\n        \"movieTheatreId\": \"movie-3: {{theatreId}}\",\r\n        \"movie\": {\r\n            \"movieId\": \"movie-3\"\r\n        },\r\n        \"theatre\": {\r\n            \"theatreId\": \"{{theatreId}}\"\r\n        }\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie-theatre/save-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie-theatre",
+										"save-all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Movie Theatre",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movieTheatreId\": \"{{movieTheatreId}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie-theatre/delete",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie-theatre",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Movie Theatres",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie-theatre/delete-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie-theatre",
+										"delete-all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "MovieShow",
+					"item": [
+						{
+							"name": "Get MovieShow",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movieShowId\": \"{{movieShowId}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie-show/find",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie-show",
+										"find"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get MovieShows",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/movie-show/find-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie-show",
+										"find-all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create MovieShow",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.response.code === 201) {\r",
+											"    pm.environment.set('movieShowId', pm.response.json().movieShowId);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"showLanguage\": \"hindi\",\r\n    \"showTime\": \"2021-01-01T10:00\",\r\n    \"movieTheatre\": {\r\n        \"movieTheatreId\": \"{{movieTheatreId}}\",\r\n        \"movie\": {\r\n            \"movieId\": \"{{movieId}}\"\r\n        },\r\n        \"theatre\": {\r\n            \"theareId\": \"{{theatreId}}\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie-show/save",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie-show",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create MovieShows",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"movieShowId\": \"show-hindi: [movie-1: {{theatreId}}]\",\r\n        \"showLanguage\": \"hindi\",\r\n        \"showTime\": \"2021-01-01T10:00\",\r\n        \"movieTheatre\": {\r\n            \"movieTheatreId\": \"movie-1: {{theatreId}}\"\r\n        }\r\n    },\r\n    {\r\n        \"showId\": \"show-english: [movie-1: {{theatreId}}]\",\r\n        \"showLanguage\": \"english\",\r\n        \"showTime\": \"2021-01-01T11:00\",\r\n        \"movieTheatre\": {\r\n            \"movieTheatreId\": \"movie-1: {{theatreId}}\"\r\n        }\r\n    },\r\n    {\r\n        \"showId\": \"show-hindi: [movie-2: {{theatreId}}]\",\r\n        \"showLanguage\": \"hindi\",\r\n        \"showTime\": \"2021-01-10T10:00\",\r\n        \"movieTheatre\": {\r\n            \"movieTheatreId\": \"movie-2: {{theatreId}}\"\r\n        }\r\n    },\r\n    {\r\n        \"showId\": \"show-english: [movie-2: {{theatreId}}]\",\r\n        \"showLanguage\": \"english\",\r\n        \"showTime\": \"2021-01-10T11:00\",\r\n        \"movieTheatre\": {\r\n            \"movieTheatreId\": \"movie-2: {{theatreId}}\"\r\n        }\r\n    },\r\n        {\r\n        \"showId\": \"show-hindi: [movie-3: {{theatreId}}]\",\r\n        \"showLanguage\": \"hindi\",\r\n        \"showTime\": \"2021-01-20T10:00\",\r\n        \"movieTheatre\": {\r\n            \"movieTheatreId\": \"movie-3: {{theatreId}}\"\r\n        }\r\n    },\r\n    {\r\n        \"showId\": \"show-english: [movie-3: {{theatreId}}]\",\r\n        \"showLanguage\": \"english\",\r\n        \"showTime\": \"2021-01-20T11:00\",\r\n        \"movieTheatre\": {\r\n            \"movieTheatreId\": \"movie-3: {{theatreId}}\"\r\n        }\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie-show/save-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie-show",
+										"save-all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete MovieShow",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movieShowId\": \"{{movieShowId}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movie-show/delete",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie-show",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Movie Shows",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/movie-show/delete-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movie-show",
+										"delete-all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Create User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.response.code === 201) {\r",
+											"    pm.environment.set('accessToken', pm.response.json().accessToken);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Test User\",\r\n    \"email\": \"test-user@example.com\",\r\n    \"password\": \"1234567890\",\r\n    \"phoneNumber\": \"1234567890\",\r\n    \"role\": \"ROLE_ADMIN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/save",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.response.code === 201) {\r",
+											"    pm.environment.set('accessToken', pm.response.json().accessToken);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Test User\",\r\n    \"email\": \"test-user@example.com\",\r\n    \"password\": \"1234567890\",\r\n    \"phoneNumber\": \"1234567890\",\r\n    \"role\": \"ROLE_ADMIN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login Admin",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.response.code === 201) {\r",
+											"    pm.environment.set('accessToken', pm.response.json().accessToken);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin-user@abc.com\",\r\n    \"password\": \"Admin@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/logout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout All User Sessions",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/logout-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"logout-all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Ticket",
+					"item": [
+						{
+							"name": "Book Ticket",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"63efa2eb5be8d607c022e677\",\r\n    \"movieId\": \"{{movieId}}\",\r\n    \"cityId\": \"{{cityId}}\",\r\n    \"theatreId\": \"{{theatreId}}\",\r\n    \"movieShowLanguage\": \"hindiShow\",\r\n    \"movieShowId\": \"{{movieShowId}}\",\r\n    \"numberOfTickets\": \"2\",\r\n    \"ticketPrice\": \"100\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/ticket/save",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"ticket",
+										"save"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "HashMap Adapter",
+			"item": [
+				{
+					"name": "Movie",
+					"item": [
+						{
+							"name": "Get Movie",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movieId\": \"{{movieId}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/adapter/movie/find",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"adapter",
+										"movie",
+										"find"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Movies",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/adapter/movie/find-all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"adapter",
+										"movie",
+										"find-all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Object Adapter",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Create User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.response.code === 201) {\r",
+											"    pm.environment.set('accessToken', pm.response.json().accessToken);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"user\",\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"password\",\r\n    \"phoneNumber\": \"1234567890\",\r\n    \"role\": \"ROLE_USER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/object-adapter/users",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"object-adapter",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.response.code === 201) {\r",
+											"    pm.environment.set('accessToken', pm.response.json().token);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/object-adapter/users/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"object-adapter",
+										"users",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/object-adapter/users/logout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"object-adapter",
+										"users",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout All User Sessions",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/object-adapter/users/logoutAll",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"object-adapter",
+										"users",
+										"logoutAll"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Movie",
+					"item": [
+						{
+							"name": "Get Movie",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/object-adapter/movies/{{movieId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"object-adapter",
+										"movies",
+										"{{movieId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Movies",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/object-adapter/movies",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"object-adapter",
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Movie",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\": \"movie-1\",\r\n    \"name\": \"Movie 1\",\r\n    \"genre\": \"action\",\r\n    \"artists\": \"Movie Artist\",\r\n    \"releaseIn\": \"2021-01-01T10:00\",\r\n    \"releaseOut\": \"2021-01-11T10:00\",\r\n    \"duration\": \"120\",\r\n    \"criticsRating\": \"3\",\r\n    \"storyline\": \"Movie storyline\",\r\n    \"artistURL\": \"artist-url\",\r\n    \"wikipediaURL\": \"wikipedia_url\",\r\n    \"trailerURL\": \"trailer_url\",\r\n    \"posterURL\": \"posterURL\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/object-adapter/movies",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"object-adapter",
+										"movies"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Upcoming Movie",
+					"item": [
+						{
+							"name": "Get Upcoming Movie",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/object-adapter/upcoming-movies/{{movieId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"object-adapter",
+										"upcoming-movies",
+										"{{movieId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Upcoming Movies",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/object-adapter/upcoming-movies",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"object-adapter",
+										"upcoming-movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Save Upcoming Movie",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\": \"movie-1\",\r\n    \"name\": \"Movie 1\",\r\n    \"genre\": \"action\",\r\n    \"artists\": \"Movie Artist\",\r\n    \"releaseIn\": \"2021-01-01T10:00\",\r\n    \"releaseOut\": \"2021-01-11T10:00\",\r\n    \"duration\": \"120\",\r\n    \"criticsRating\": \"3\",\r\n    \"storyline\": \"Movie storyline\",\r\n    \"artistURL\": \"artist-url\",\r\n    \"wikipediaURL\": \"wikipedia_url\",\r\n    \"trailerURL\": \"trailer_url\",\r\n    \"posterURL\": \"posterURL\",\r\n    \"releasedStatus\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/object-adapter/upcoming-movies",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"object-adapter",
+										"upcoming-movies"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Ticket",
+					"item": [
+						{
+							"name": "Book Ticket",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"{{userId}}\",\r\n    \"movieId\": \"{{movieId}}\",\r\n    \"cityId\": \"{{cityId}}\",\r\n    \"theatreId\": \"{{theatreId}}\",\r\n    \"movieShowLanguage\": \"{{movieShowLanguage}}\",\r\n    \"movieShowId\": \"{{movieShowId}}\",\r\n    \"numberOfTickets\": \"4\",\r\n    \"ticketPrice\": \"100\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/object-adapter/tickets",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"object-adapter",
+										"tickets"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{accessToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

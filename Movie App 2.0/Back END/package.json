@@ -1,0 +1,31 @@
+{
+  "name": "movie-app-server",
+  "version": "1.0.0",
+  "description": "Movie ticket booking service",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "env-cmd config/dev.env nodemon src/index.js",
+    "test": "env-cmd config/test.env jest --watchAll --runInBand",
+    "test-dev": "env-cmd config/test.env jest --runInBand"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "mongodb": "^5.0.0",
+    "mongoose": "^5.3.16",
+    "multer": "^1.4.1",
+    "validator": "^13.9.0"
+  },
+  "devDependencies": {
+    "env-cmd": "^8.0.2",
+    "jest": "^23.6.0",
+    "nodemon": "^2.0.20",
+    "supertest": "^3.4.1"
+  }
+}
