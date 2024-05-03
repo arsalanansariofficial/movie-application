@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>Get Picture</button>
+    <br>
+    <img src="" alt="poster">
+</body>
+<script>
+    const poster = document.querySelector('img');
+    const button = document.querySelector('button');
+    console.log(poster)
+    button.addEventListener('click', async () => {
+        try {
+            const url = 'http://localhost:8080/movies/63ef973fd3f91b17a01aa2c5';
+            const response = await fetch(url);
+            let responseJSON;
+            if (!response.ok) {
+                responseJSON = await response.json();
+                console.log(responseJSON.message);
+            }
+            responseJSON = await response.json();
+            console.log(responseJSON)
+            poster.src = responseJSON.posterURL;
+        } catch (error) {
+            console.log(error);
+        }
+    });
+</script>
+</html>
