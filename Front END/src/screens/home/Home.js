@@ -7,7 +7,6 @@ import useHttp from "../../hooks/use-http";
 import {movieActions} from "../../store/movie-slice";
 import {useDispatch} from "react-redux";
 import {headerActions} from "../../store/header-slice";
-import {domainName} from "../../config/dev";
 
 const styles = {
     upcomingMoviesHeading: {
@@ -27,8 +26,8 @@ const Home = () => {
         dispatch(headerActions.setDisplayButton(false));
         if (!error) {
             const requestConfiguration = {
-                url: `${domainName}/movies`
-            }
+              url: `${process.env.REACT_APP_DOMAIN_NAME}/movies`
+            };
             const setMoviesData = movies => {
                 dispatch(movieActions.setMovies(movies));
                 dispatch(movieActions.setFilteredMovies(movies));

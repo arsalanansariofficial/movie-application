@@ -8,7 +8,6 @@ import Typography from "@material-ui/core/Typography";
 import {useSelector} from "react-redux";
 import useHttp from "../../../hooks/use-http";
 import useAuthentication from "../../../hooks/use-authentication";
-import {domainName} from "../../../config/dev";
 
 const Registration = ({closeModalHandler}) => {
 
@@ -68,7 +67,7 @@ const Registration = ({closeModalHandler}) => {
         else if (!phoneNumber)
             setPhoneNumberValidation("display");
         else {
-            const url = `${domainName}/users`;
+            const url = `${process.env.REACT_APP_DOMAIN_NAME}/users`;
             const header = {
                 'Content-Type': 'application/json'
             }

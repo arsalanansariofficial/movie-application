@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "63f09cb411206730a437d779"
+  },
+  "name": "Upcoming Movie 1",
+  "posterURL": "movie-1.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "63f09cec11206730a437d77b"
+  },
+  "name": "Upcoming Movie 2",
+  "posterURL": "movie-2.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "63f09d1011206730a437d77d"
+  },
+  "name": "Upcoming Movie 3",
+  "posterURL": "movie-3.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "63f09d3911206730a437d77f"
+  },
+  "name": "Upcoming Movie 4",
+  "posterURL": "movie-4.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "63f09d6111206730a437d781"
+  },
+  "name": "Upcoming Movie 5",
+  "posterURL": "movie-5.png",
+  "__v": 0
+}]

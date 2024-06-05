@@ -6,7 +6,6 @@ import ArtistDetails from "./ArtistDetails/ArtistDetails";
 import MovieDetails from "./MovieDetails/MovieDetails";
 import {useDispatch, useSelector} from "react-redux";
 import useHttp from "../../hooks/use-http";
-import {domainName} from "../../config/dev";
 import {selectedMovieActions} from "../../store/selected-movie-slice";
 
 const Details = () => {
@@ -19,8 +18,8 @@ const Details = () => {
     useEffect(() => {
         if (!error) {
             const requestConfigurations = {
-                url: `${domainName}/movies/${id}`
-            }
+              url: `${process.env.REACT_APP_DOMAIN_NAME}/movies/${id}`
+            };
             const setMovieData = movie => {
                 dispatch(selectedMovieActions.setMovie(movie));
                 sessionStorage.setItem('movie', JSON.stringify(movie));

@@ -18,19 +18,24 @@ const ReleasedMovies = () => {
     }
 
     return (
-        <div className="left">
-            <ImageList rowHeight={350} cols={4} style={gridListMain}>
-                {
-                    releasedMovies.map(movie =>
-                        <ImageListItem className="released-movie-grid-item" key={movie._id}
-                                       onClick={() => movieClickHandler(movie._id)}>
-                            <img src={movie['posterURL']} className="movie-poster" alt={movie["name"]}/>
-                            <ImageListItemBar title={movie.name}/>
-                        </ImageListItem>
-                    )
-                }
-            </ImageList>
-        </div>
+      <div className="left">
+        <ImageList rowHeight={350} cols={4} style={gridListMain}>
+          {releasedMovies.map(movie => (
+            <ImageListItem
+              className="released-movie-grid-item"
+              key={movie._id}
+              onClick={() => movieClickHandler(movie._id)}
+            >
+              <img
+                src={`/posters/released/${movie['posterURL']}`}
+                className="movie-poster"
+                alt={movie['name']}
+              />
+              <ImageListItemBar title={movie.name} />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </div>
     );
 }
 

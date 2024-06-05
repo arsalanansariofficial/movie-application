@@ -9,7 +9,6 @@ import Button from "@material-ui/core/Button";
 import React, {useState} from "react";
 import {useSelector} from "react-redux";
 import useHttp from "../../../hooks/use-http";
-import {domainName} from "../../../config/dev";
 
 const Invoice = ({id, location, theatre, language, showDate, tickets, unitPrice, totalPrice, setTotalPrice, setDisplayNotifier}) => {
 
@@ -32,7 +31,7 @@ const Invoice = ({id, location, theatre, language, showDate, tickets, unitPrice,
     }
 
     const confirmBooking = () => {
-        const url = `${domainName}/tickets`;
+        const url = `${process.env.REACT_APP_DOMAIN_NAME}/tickets`;
         const header = {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${user.token}`

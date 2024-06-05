@@ -58,7 +58,7 @@ const Header = () => {
     }
 
     const logoutUser = () => {
-        const url = 'http://localhost:8080/users/logout';
+        const url = `${process.env.REACT_APP_DOMAIN_NAME}/users/logout`;
         const header = {
             'Authorization': `Bearer ${user.token}`
         }

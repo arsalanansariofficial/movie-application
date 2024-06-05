@@ -8,7 +8,6 @@ import Typography from "@material-ui/core/Typography";
 import {useSelector} from "react-redux";
 import useAuthentication from "../../../hooks/use-authentication";
 import useHttp from "../../../hooks/use-http";
-import {domainName} from "../../../config/dev";
 
 const Login = ({closeModalHandler}) => {
 
@@ -40,7 +39,7 @@ const Login = ({closeModalHandler}) => {
         else if (!password)
             setPasswordValidation("display");
         else {
-            const url = `${domainName}/users/login`;
+            const url = `${process.env.REACT_APP_DOMAIN_NAME}/users/login`;
             const user = {
                 email: userName,
                 password
