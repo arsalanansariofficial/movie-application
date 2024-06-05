@@ -39,7 +39,7 @@ const Details = () => {
                 {
                     movie &&
                     <div className="leftDetails">
-                        <img src={movie['posterURL']} alt={movie["name"]} style={{width: '200px', height: '200px'}}/>
+                        <img src={`/posters/released/${movie['posterURL']}`} alt={movie["name"]} style={{width: '200px', height: '200px'}}/>
                     </div>
                 }
                 <MovieDetails/>
